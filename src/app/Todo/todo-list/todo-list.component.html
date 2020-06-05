@@ -1,0 +1,9 @@
+<mat-action-list *ngFor="let item of this.todoService.items">
+  <button mat-list-item *ngIf="!item.isDone" (click)="complete(item)">
+    {{ item.description }}
+  </button>
+</mat-action-list>
+
+<button mat-fab color="primary" (click)="addTodoItem()">
+  <mat-icon>add</mat-icon>
+</button>  

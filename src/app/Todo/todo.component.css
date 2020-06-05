@@ -1,0 +1,8 @@
+mat-tab-group {
+    display: flex;
+}
+
+mat-tab {
+    display: flex;
+    flex-grow: 1;
+}
