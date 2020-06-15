@@ -10,6 +10,9 @@ export class TodoItemsService {
 constructor() { }
 
   addItem(description: string) {
+    if (this.isEmptyOrSpaces(description)) {
+      return;
+    }
     this.items.push({
       description,
       isDone: false
@@ -24,5 +27,9 @@ constructor() { }
   delete(item: Todo) {
     const todo = this.items.findIndex(x => x.description === item.description && x.isDone);
     this.items.splice(todo, 1);
+  }
+
+  isEmptyOrSpaces(str){
+    return str === null || str.match(/^ *$/) !== null;
   }
 }
